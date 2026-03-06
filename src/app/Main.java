@@ -16,7 +16,7 @@ public class Main {
      do {
 
          // ===== MENÚ PRINCIPAL =====
-         System.out.println("\n========== MENU ==========");
+         System.out.println("\n=============== MENU ===============");
          System.out.println("1. Suma de divisibles entre 4");
          System.out.println("2. Factorial");
          System.out.println("3. Positivos, negativos y ceros");
@@ -35,7 +35,7 @@ public class Main {
          System.out.println("16. Primeros múltiplos de 6");
          System.out.println("17. Determinar si es potencia de 2");
          System.out.println("18. Invertir un número");
-         System.out.println("19. Suma de 1 a n par o impar");
+         System.out.println("19. Suma de 1 a número par o impar");
          System.out.println("20. Convertir Celsius a Fahrenheit");
          System.out.println("0. Salir");
 
@@ -124,17 +124,17 @@ public class Main {
 
  // =========================================================
  // EJERCICIO 1
- // Mostrar la suma de los números divisibles entre 4 desde 1 hasta n
+ // Mostrar la suma de los números divisibles entre 4 desde 1 hasta numero
  // =========================================================
  static void ejercicio1() {
 
-     System.out.print("Ingrese n: ");
-     int n = sc.nextInt(); // número límite que el usuario escribe
+     System.out.print("Ingrese un número: ");
+     int numero = sc.nextInt(); // número límite que el usuario escribe
 
      int suma = 0; // variable acumuladora donde iremos guardando la suma
 
      // Ciclo que recorre todos los números desde 1 hasta n
-     for (int i = 1; i <= n; i++) {
+     for (int i = 1; i <= numero; i++) {
 
          // Verificamos si el número es divisible entre 4
          // El operador % obtiene el residuo de la división
@@ -151,18 +151,18 @@ public class Main {
  // =========================================================
  // EJERCICIO 2
  // Calcular el factorial de un número
- // n! = 1 * 2 * 3 * ... * n
+ // n! = 1 * 2 * 3 * ... * numero
  // =========================================================
  static void ejercicio2() {
 
-     System.out.print("Ingrese n: ");
-     int n = sc.nextInt();
+     System.out.print("Ingrese un número: ");
+     int numero = sc.nextInt();
 
      long factorial = 1; 
      // factorial empieza en 1 porque vamos a multiplicar
 
      // multiplicamos todos los números desde 1 hasta n
-     for (int i = 1; i <= n; i++) {
+     for (int i = 1; i <= numero; i++) {
 
          factorial = factorial * i;
      }
@@ -176,15 +176,15 @@ public class Main {
  // =========================================================
  static void ejercicio3() {
 
-     System.out.print("Cantidad de numeros: ");
-     int n = sc.nextInt();
+     System.out.print("Ingrese la cantidad de numeros: ");
+     int numero = sc.nextInt();
 
      int positivos = 0;
      int negativos = 0;
      int ceros = 0;
 
      // Ciclo para leer n números
-     for (int i = 1; i <= n; i++) {
+     for (int i = 1; i <= numero; i++) {
 
          System.out.print("Ingrese numero: ");
          int num = sc.nextInt();
@@ -207,29 +207,29 @@ public class Main {
 
  // =========================================================
  // EJERCICIO 4
- // Calcular el promedio de números pares entre 1 y n
+ // Calcular el promedio de números pares entre 1 y numero
  // =========================================================
  static void ejercicio4() {
 
-     System.out.print("Ingrese n: ");
-     int n = sc.nextInt();
+     System.out.print("Ingrese un número: ");
+     int numero = sc.nextInt();
 
      int suma = 0;
      int contador = 0;
 
      // recorremos los números
-     for (int i = 1; i <= n; i++) {
+     for (int i = 1; i <= numero; i++) {
 
          // verificamos si es par
          if (i % 2 == 0) {
 
-             suma += i;
+             suma = suma + i;
              contador++;
          }
      }
 
      if (contador > 0)
-         System.out.println("Promedio: " + (suma / contador));
+         System.out.println("Promedio el promedio es: " + (suma / contador));
  }
 
  // =========================================================
@@ -239,19 +239,19 @@ public class Main {
  // =========================================================
  static void ejercicio5() {
 
-     System.out.print("Ingrese numero: ");
-     int n = sc.nextInt();
+     System.out.print("Ingrese un número: ");
+     int numero = sc.nextInt();
 
      int suma = 0;
 
      // mientras el número tenga dígitos
-     while (n > 0) {
+     while (numero > 0) {
 
-         int digito = n % 10; // obtenemos el último dígito
+         int digito = numero % 10; // obtenemos el último dígito
 
-         suma += digito; // lo sumamos
+         suma = suma + digito; // lo sumamos
 
-         n = n / 10; // eliminamos el último dígito
+         numero = numero / 10; // eliminamos el último dígito
      }
 
      System.out.println("Suma de digitos: " + suma);
@@ -264,24 +264,24 @@ public class Main {
 static void ejercicio6() {
 
   // Pedimos el número al usuario
-  System.out.print("Ingrese numero: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
   // Primero verificamos si es múltiplo de ambos
-  if (n % 7 == 0 && n % 11 == 0) {
+  if (numero % 7 == 0 && numero % 11 == 0) {
 
       // Si el residuo de ambas divisiones es 0 entonces es múltiplo de los dos
       System.out.println("Es multiplo de 7 y de 11");
   }
 
   // Si no es de ambos, verificamos si es solo de 7
-  else if (n % 7 == 0) {
+  else if (numero % 7 == 0) {
 
       System.out.println("Es multiplo de 7");
   }
 
   // Si no es de 7, verificamos si es solo de 11
-  else if (n % 11 == 0) {
+  else if (numero % 11 == 0) {
 
       System.out.println("Es multiplo de 11");
   }
@@ -299,14 +299,15 @@ static void ejercicio6() {
  // =========================================================
  static void ejercicio7() {
 
-     System.out.print("Ingrese n: ");
-     int n = sc.nextInt();
+     System.out.print("Ingrese un número: ");
+     int numero = sc.nextInt();
 
-     for (int i = 1; i <= n; i++) {
+     for (int i = 1; i <= numero; i++) {
 
          if (i % 3 == 0 && i % 2 != 0) {
 
              System.out.println(i);
+             
          }
      }
  }
@@ -317,7 +318,7 @@ static void ejercicio6() {
  // =========================================================
  static void ejercicio8() {
 
-     System.out.print("Ingrese hora (0-23): ");
+     System.out.print("Ingrese la hora (0-23): ");
      int hora = sc.nextInt();
 
      if (hora >= 6 && hora < 12)
@@ -337,9 +338,9 @@ static void ejercicio6() {
  static void ejercicio9() {
 
      System.out.print("Numero (1-5): ");
-     int n = sc.nextInt();
+     int numero = sc.nextInt();
 
-     switch (n) {
+     switch (numero) {
 
          case 1:
              System.out.println("I");
@@ -372,27 +373,31 @@ static void ejercicio6() {
  // =========================================================
  static void ejercicio10() {
 
-     System.out.print("Operacion (1 suma, 2 resta, 3 multiplicacion): ");
-     int op = sc.nextInt();
-
-     System.out.print("Numero 1: ");
-     int a = sc.nextInt();
+	 System.out.println("Ingrese 2 numeros");
+	 
+	 System.out.print("Numero 1: ");
+     int numero1 = sc.nextInt();
 
      System.out.print("Numero 2: ");
-     int b = sc.nextInt();
+     int numero2 = sc.nextInt();
+	 
+     System.out.print("Elija la operacion (1 suma, 2 resta, 3 multiplicacion): ");
+     int operacion = sc.nextInt();
 
-     switch (op) {
+     
+
+     switch (operacion) {
 
          case 1:
-             System.out.println("Resultado: " + (a + b));
+             System.out.println("Resultado: " + (numero1 + numero2));
              break;
 
          case 2:
-             System.out.println("Resultado: " + (a - b));
+             System.out.println("Resultado: " + (numero1 - numero2));
              break;
 
          case 3:
-             System.out.println("Resultado: " + (a * b));
+             System.out.println("Resultado: " + (numero1 * numero2));
              break;
 
          default:
@@ -405,21 +410,21 @@ static void ejercicio6() {
 static void ejercicio11() {
 
   // Pedimos el primer número
-  System.out.print("Ingrese numero A: ");
-  int a = sc.nextInt();
+  System.out.print("Ingrese el primer número: ");
+  int numero1 = sc.nextInt();
 
   // Pedimos el segundo número
-  System.out.print("Ingrese numero B: ");
-  int b = sc.nextInt();
+  System.out.print("Ingrese el segundo número: ");
+  int numero2 = sc.nextInt();
 
   // Math.max obtiene el número mayor entre dos valores
-  int mayor = Math.max(a, b);
+  int mayor = Math.max(numero1, numero2);
 
   // Math.min obtiene el número menor
-  int menor = Math.min(a, b);
+  int menor = Math.min(numero1, numero2);
 
   // Math.abs obtiene el valor absoluto (sin signo negativo)
-  int diferencia = Math.abs(a - b);
+  int diferencia = Math.abs(numero1 - numero2);
 
   // Mostramos resultados
   System.out.println("Mayor: " + mayor);
@@ -432,17 +437,17 @@ static void ejercicio11() {
 //Mostrar la tabla de división del número ingresado entre 1 y 10
 static void ejercicio12() {
 
-  System.out.print("Ingrese numero: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
   // Recorremos números del 1 al 10
   for (int i = 1; i <= 10; i++) {
 
       // Convertimos a double para que muestre decimales
-      double resultado = n / (double) i;
+      double resultado = numero / (double) i;
 
       // Mostramos la operación
-      System.out.println(n + " / " + i + " = " + resultado);
+      System.out.println(numero + " / " + i + " = " + resultado);
   }
 }
 
@@ -451,15 +456,15 @@ static void ejercicio12() {
 //Contar cuántos dígitos pares tiene un número
 static void ejercicio13() {
 
-  System.out.print("Ingrese numero: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
   int contador = 0;
 
   // Analizamos cada dígito
-  while (n > 0) {
+  while (numero > 0) {
 
-      int digito = n % 10; // obtenemos el último dígito
+      int digito = numero % 10; // obtenemos el último dígito
 
       // Verificamos si el dígito es par
       if (digito % 2 == 0) {
@@ -467,7 +472,7 @@ static void ejercicio13() {
       }
 
       // Eliminamos el último dígito
-      n = n / 10;
+      numero = numero / 10;
   }
 
   System.out.println("Cantidad de digitos pares: " + contador);
@@ -478,21 +483,21 @@ static void ejercicio13() {
 //Determinar si un número es triangular
 static void ejercicio14() {
 
-  System.out.print("Ingrese numero: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
   int suma = 0; // suma acumulada
-  int k = 1;    // número que iremos sumando
+  int numeroSuma = 1;    // número que iremos sumando
 
   // Seguimos sumando números consecutivos
-  while (suma < n) {
+  while (suma < numero) {
 
-      suma += k;
-      k++;
+      suma = suma + numeroSuma;
+      numeroSuma++;
   }
 
-  // Si la suma coincide con n es triangular
-  if (suma == n)
+  // Si la suma coincide con numero es triangular
+  if (suma == numero)
       System.out.println("El numero es triangular");
   else
       System.out.println("No es triangular");
@@ -503,16 +508,16 @@ static void ejercicio14() {
 //Calcular el promedio de números negativos
 static void ejercicio15() {
 
-  System.out.print("Cantidad de numeros: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese la cantidad de números: ");
+  int numero = sc.nextInt();
 
   int suma = 0;
   int contador = 0;
 
   // Leemos los números
-  for (int i = 1; i <= n; i++) {
+  for (int i = 1; i <= numero; i++) {
 
-      System.out.print("Ingrese numero: ");
+      System.out.print("Ingrese un número: ");
       int num = sc.nextInt();
 
       // Solo trabajamos con negativos
@@ -532,14 +537,14 @@ static void ejercicio15() {
 
 
 //================= EJERCICIO 16 =================
-//Mostrar los primeros n múltiplos de 6
+//Mostrar los primeros numeros múltiplos de 6
 static void ejercicio16() {
 
-  System.out.print("Ingrese n: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
   // Generamos los múltiplos
-  for (int i = 1; i <= n; i++) {
+  for (int i = 1; i <= numero; i++) {
 
       int multiplo = 6 * i;
 
@@ -552,19 +557,19 @@ static void ejercicio16() {
 //Determinar si un número es potencia de 2
 static void ejercicio17() {
 
-  System.out.print("Ingrese numero: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
-  int original = n;
+  int original = numero;
 
   // Mientras sea divisible entre 2 lo dividimos
-  while (n % 2 == 0) {
+  while (numero % 2 == 0) {
 
-      n = n / 2;
+      numero = numero / 2;
   }
 
   // Si terminamos en 1 entonces era potencia de 2
-  if (n == 1)
+  if (numero == 1)
       System.out.println(original + " es potencia de 2");
   else
       System.out.println(original + " NO es potencia de 2");
@@ -575,21 +580,21 @@ static void ejercicio17() {
 //Invertir un número
 static void ejercicio18() {
 
-  System.out.print("Ingrese numero: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
   int invertido = 0;
 
   // Mientras el número tenga dígitos
-  while (n > 0) {
+  while (numero > 0) {
 
-      int digito = n % 10; // obtenemos último dígito
+      int digito = numero % 10; // obtenemos último dígito
 
       // construimos el número invertido
       invertido = invertido * 10 + digito;
 
       // quitamos el último dígito
-      n = n / 10;
+      numero = numero / 10;
   }
 
   System.out.println("Numero invertido: " + invertido);
@@ -597,14 +602,14 @@ static void ejercicio18() {
 
 
 //================= EJERCICIO 19 =================
-//Determinar si la suma de 1 a n es par o impar
+//Determinar si la suma de 1 a numero es par o impar
 static void ejercicio19() {
 
-  System.out.print("Ingrese n: ");
-  int n = sc.nextInt();
+  System.out.print("Ingrese un número: ");
+  int numero = sc.nextInt();
 
-  // Fórmula matemática de suma de 1 a n
-  int suma = (n * (n + 1)) / 2;
+  // Fórmula matemática de suma de 1 a numero
+  int suma = (numero * (numero + 1)) / 2;
 
   // Verificamos si es par o impar
   if (suma % 2 == 0)
@@ -619,12 +624,12 @@ static void ejercicio19() {
 static void ejercicio20() {
 
   System.out.print("Ingrese temperatura en Celsius: ");
-  double c = sc.nextDouble();
+  double celsius = sc.nextDouble();
 
   // Fórmula de conversión
-  double f = (c * 9 / 5) + 32;
+  double fah = (celsius * 9 / 5) + 32;
 
-  System.out.println("Temperatura en Fahrenheit: " + f);
+  System.out.println("Temperatura en Fahrenheit: " + fah);
 }
 
 }
